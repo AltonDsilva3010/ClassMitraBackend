@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://ClassMitra:classmitra12345@cluster0.kszhg.mongodb.net/ClassMitraDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
+}
