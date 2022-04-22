@@ -12,6 +12,11 @@ const ClassroomSchema = new mongoose.Schema({
   description: {
     type: String,
   },
+  classcode: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   assignments: [
     {
       title: {
@@ -22,7 +27,10 @@ const ClassroomSchema = new mongoose.Schema({
         type: String,
       },
       files: {
-        type: String,
+        type: [String],
+      },
+      submissions: {
+        type: [String],
       },
       duedate: {
         type: Date,

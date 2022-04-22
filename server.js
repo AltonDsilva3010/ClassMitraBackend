@@ -1,10 +1,12 @@
 const express = require("express");
 const connectDB = require("./config/db");
+const { urlencoded } = require("express");
 
 const app = express();
 
 connectDB();
 
+app.use(urlencoded({ extended: true }));
 app.use(express.json({ extended: false })); //bodyParser
 
 app.get("/", (req, res) => res.send("API RUNNING"));
