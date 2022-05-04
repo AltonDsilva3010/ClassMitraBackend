@@ -269,6 +269,22 @@ router.put(
   }
 );
 
+// @route GET api/classroom/students
+// @desc  Get all students in that classroom
+// @access Private
+
+router.get(
+  "/students",
+  [auth, [check("classcode", "Classcode cannot be empty").not().isEmpty()]],
+  async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+  }
+);
+
 // @route    DELETE api/classroom/assignment/:assi_id
 // @desc     Delete an assignment from a classroom
 // @access   Private
